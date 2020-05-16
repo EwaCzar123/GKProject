@@ -41,6 +41,8 @@ public class player : MonoBehaviour
         myAnimator.SetBool("run", playerHasHorizontalSpeed);
     }
 
+   
+
     private void Jump()
     {
         if (CrossPlatformInputManager.GetButtonDown("Jump"))
