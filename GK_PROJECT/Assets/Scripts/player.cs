@@ -7,7 +7,7 @@ public class player : MonoBehaviour
 {
     //Config
     [SerializeField] float runSpeed = 5f;
-    [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float jumpSpeed = 4f;
     [SerializeField] float climbSpeed = 5f;
 
     //State
