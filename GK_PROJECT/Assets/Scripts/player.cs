@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿//using Boo.Lang.Environments;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -9,13 +11,14 @@ public class player : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-
+    [SerializeField] Vector2 death = new Vector2(25f, 25f);
     //State
     bool isAlive = true;
 
     //Cached component refernces
     Rigidbody2D myRigidBody;
     Animator myAnimator;
+   // CapsuleCollider2D myBodyCollider;
     Collider2D myCollider2D;
     float gravityScaleAtStart;
 
@@ -25,18 +28,21 @@ public class player : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myCollider2D = GetComponent<Collider2D>();
+       // myBodyCollider = GetComponent < CapsuleCollider2D>();
         gravityScaleAtStart = myRigidBody.gravityScale;
     }
-
+    //
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive){ return; }
         Run();
         ClimbLadder();
         Jump();
         FlipSprite();
+        Die();
     }
-
+    //
     private void Run()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); //value is between -1 to +1
@@ -74,6 +80,18 @@ public class player : MonoBehaviour
             myRigidBody.velocity += jumpVelocityToAdd;
         }
     }
+
+    private void Die()
+    {
+       if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("dying");
+            GetComponent<Rigidbody2D>().velocity = death;
+        }
+           
+    }
+
     private void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
