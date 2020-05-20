@@ -72,12 +72,7 @@ public class player : MonoBehaviour
         myAnimator.SetBool("climb", playerHasVerticalSpeed);
     }
 
-    private void changeRotation()       //preventing rotation
-    {
-        var rotationVec = transform.rotation.eulerAngles;
-        rotationVec.z = 0;
-        transform.rotation = Quaternion.Euler(rotationVec);
-    }
+   
 
     private void Jump()
     {
@@ -109,4 +104,13 @@ public class player : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
         }
     }
+
+    private void changeRotation()       //preventing rotation
+    {
+        var rotationVec = transform.rotation.eulerAngles;
+        rotationVec.z = 0;
+        transform.rotation = Quaternion.Euler(rotationVec);
+    }
 }
+
+
