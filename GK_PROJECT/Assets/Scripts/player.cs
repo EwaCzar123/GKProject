@@ -9,7 +9,7 @@ public class player : MonoBehaviour
 {
     //Config
     [SerializeField] float runSpeed = 5f;
-    [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float jumpSpeed = 7f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 death = new Vector2(25f, 25f);
     //State
@@ -36,6 +36,8 @@ public class player : MonoBehaviour
     void Update()
     {
         if (!isAlive){ return; }
+
+        changeRotation();       //to prevent rotation, seting rotation.z to 0
         Run();
         ClimbLadder();
         Jump();
@@ -70,6 +72,8 @@ public class player : MonoBehaviour
         myAnimator.SetBool("climb", playerHasVerticalSpeed);
     }
 
+   
+
     private void Jump()
     {
         if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
@@ -83,7 +87,7 @@ public class player : MonoBehaviour
 
     private void Die()
     {
-       if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+       if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("dying");
@@ -100,4 +104,13 @@ public class player : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
         }
     }
+
+    private void changeRotation()       //preventing rotation
+    {
+        var rotationVec = transform.rotation.eulerAngles;
+        rotationVec.z = 0;
+        transform.rotation = Quaternion.Euler(rotationVec);
+    }
 }
+
+

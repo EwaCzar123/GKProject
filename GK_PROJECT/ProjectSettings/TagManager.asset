@@ -18,9 +18,9 @@ TagManager:
   - Player
   - Background
   - Enemy
-  - 
-  - 
-  - 
+  - Hazards
+  - Interaction
+  - Camera
   - 
   - 
   - 
@@ -41,18 +41,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Camera
+    uniqueID: 2649972525
+    locked: 0
   - name: Background
     uniqueID: 2926406645
     locked: 0
-  - name: Climbing
-    uniqueID: 2179370611
-    locked: 0
   - name: Enemy
     uniqueID: 578010529
+    locked: 0
+  - name: Hazards
+    uniqueID: 1578833161
     locked: 0
   - name: Player
     uniqueID: 728657651
     locked: 0
   - name: Foreground
     uniqueID: 1938445489
+    locked: 0
+  - name: Climbing
+    uniqueID: 2179370611
+    locked: 0
+  - name: Interaction
+    uniqueID: 626211435
     locked: 0
