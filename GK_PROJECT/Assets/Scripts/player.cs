@@ -18,8 +18,9 @@ public class player : MonoBehaviour
     //Cached component refernces
     Rigidbody2D myRigidBody;
     Animator myAnimator;
-   // CapsuleCollider2D myBodyCollider;
-    Collider2D myCollider2D;
+   //CapsuleCollider2D myBodyCollider;
+    CapsuleCollider2D myBodyCollider2D;
+    BoxCollider2D playerLegsCollider;
     float gravityScaleAtStart;
 
     // Start is called before the first frame update
@@ -27,8 +28,8 @@ public class player : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        myCollider2D = GetComponent<Collider2D>();
-       // myBodyCollider = GetComponent < CapsuleCollider2D>();
+        myBodyCollider2D = GetComponent<CapsuleCollider2D>();
+        playerLegsCollider = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = myRigidBody.gravityScale;
     }
     //
@@ -57,7 +58,7 @@ public class player : MonoBehaviour
 
    private void ClimbLadder()
     {
-        if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        if (!playerLegsCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
             myAnimator.SetBool("climb", false);
             myRigidBody.gravityScale = gravityScaleAtStart;
@@ -76,7 +77,7 @@ public class player : MonoBehaviour
 
     private void Jump()
     {
-        if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        if (!myBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
         if (CrossPlatformInputManager.GetButtonDown("Jump"))
         {
@@ -87,7 +88,7 @@ public class player : MonoBehaviour
 
     private void Die()
     {
-       if(myCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+       if(myBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("dying");
