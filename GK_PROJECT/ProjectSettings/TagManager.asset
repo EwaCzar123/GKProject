@@ -21,7 +21,7 @@ TagManager:
   - Hazards
   - Interaction
   - Camera
-  - 
+  - UI
   - 
   - 
   - 
@@ -64,4 +64,7 @@ TagManager:
     locked: 0
   - name: Interaction
     uniqueID: 626211435
+    locked: 0
+  - name: 
+    uniqueID: 1307337661
     locked: 0
