@@ -47,9 +47,6 @@ TagManager:
   - name: Background
     uniqueID: 2926406645
     locked: 0
-  - name: Enemy
-    uniqueID: 578010529
-    locked: 0
   - name: Hazards
     uniqueID: 1578833161
     locked: 0
@@ -64,6 +61,9 @@ TagManager:
     locked: 0
   - name: Interaction
     uniqueID: 626211435
+    locked: 0
+  - name: Enemy
+    uniqueID: 578010529
     locked: 0
   - name: 
     uniqueID: 1307337661

@@ -17,12 +17,7 @@ public class GameSession : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+   
     public void ProcessPlayerDeath()
     {
         if(playerLives > 1)
