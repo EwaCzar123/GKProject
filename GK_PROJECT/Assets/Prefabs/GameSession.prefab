@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: Lives
 --- !u!1 &1379556832
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 999999
+  m_Text: Score
 --- !u!1 &1548182267
 GameObject:
   m_ObjectHideFlags: 0
