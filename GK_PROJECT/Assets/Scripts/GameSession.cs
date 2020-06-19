@@ -11,11 +11,13 @@ public class GameSession : MonoBehaviour
     [SerializeField] Text livesText;
     [SerializeField] Text scoreText;
 
-
+    private int numGameLevel;
+    
     private void Awake()
     {
         int numGameSession = FindObjectsOfType<GameSession>().Length;
-        if(numGameSession > 1)
+        
+        if(numGameSession > 1 && numGameSession<3)
         {
             Destroy(gameObject);
         }
@@ -61,6 +63,7 @@ public class GameSession : MonoBehaviour
     {
         livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
+        numGameLevel = 4;
     }
-
+    
 }
