@@ -8,8 +8,7 @@ public class LevelExit : MonoBehaviour
 {
     [SerializeField] float LevelLoadDelay = 0.7f;
 
-    //ostatni level, do poprawy, ale po przekroczeniu ostatniego portalu powrot do level1
-  ///  [SerializeField] int Lastlevel = 2;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(LoadNextLevel());
@@ -19,8 +18,11 @@ public class LevelExit : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(LevelLoadDelay);
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-      //  if(currentSceneIndex == Lastlevel )
-      //     SceneManager.LoadScene(0);
+
+
+       ScenePersist scenePersist = FindObjectOfType<ScenePersist>();
+       Destroy(scenePersist);
+
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 

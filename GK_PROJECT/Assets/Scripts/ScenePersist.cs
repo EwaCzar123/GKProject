@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ScenePersist : MonoBehaviour
 {
+
+    //static int Scene = 0;
     int startingSceneIndex;
 
     private void Awake()

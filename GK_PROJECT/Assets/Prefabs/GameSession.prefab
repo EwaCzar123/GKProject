@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 699522289}
   - component: {fileID: 699522291}
   - component: {fileID: 699522290}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: livesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -488, y: 243}
+  m_AnchoredPosition: {x: -303, y: 156}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &699522291
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1379556833}
   - component: {fileID: 1379556835}
   - component: {fileID: 1379556834}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479, y: 247}
+  m_AnchoredPosition: {x: 299, y: 156}
   m_SizeDelta: {x: 180.87714, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1379556835
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 1548182270}
   - component: {fileID: 1548182269}
   - component: {fileID: 1548182268}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UI Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6048206161786668106}
   - component: {fileID: 6048206161786668109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameSession
   m_TagString: Untagged
   m_Icon: {fileID: 0}
